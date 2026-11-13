@@ -1,0 +1,72 @@
+{
+  "A": {
+    "records": 24,
+    "correct_and_complete": 16,
+    "correct_start_only": 8,
+    "incorrect": 0,
+    "rate_strict": "16/24",
+    "rate_lenient_start_correct": "24/24",
+    "filter_questions": 2,
+    "scope_compliant_top3": "2/2",
+    "issues": [
+      "t01 rank1 k8s-workloads-pods-static-pods@445-942-06cbcd39: correct_start_only; chunk spans H2 pages 1-2",
+      "t02 rank2 k8s-workloads-pods-ephemeral-containers@3137-3545-0445bcea: correct_start_only; chunk spans H2 pages 4-5",
+      "t03 rank1 k8s-workloads-pods-user-namespaces@9922-10419-c598e8df: correct_start_only; chunk spans H2 pages 5-6",
+      "t03 rank3 k8s-workloads-pods-user-namespaces@6297-6794-895efd9d: correct_start_only; chunk spans H2 pages 4-5",
+      "t04 rank2 k8s-workloads-pods-disruptions@13985-14394-770f191b: correct_start_only; chunk spans H2 pages 8-9",
+      "t07 rank1 k8s-workloads-workload-api-disruption-and-priority@0-500-46100178: correct_start_only; chunk spans H2 pages 1-2",
+      "t07 rank2 k8s-workloads-workload-api-disruption-and-priority@904-1387-300bd173: correct_start_only; chunk spans H2 pages 2-3",
+      "t08 rank1 k8s-services-networking-ingress-controllers@0-497-83a399c8: correct_start_only; chunk spans H2 pages 1-2"
+    ]
+  },
+  "B": {
+    "records": 24,
+    "correct_and_complete": 24,
+    "correct_start_only": 0,
+    "incorrect": 0,
+    "rate_strict": "24/24",
+    "rate_lenient_start_correct": "24/24",
+    "filter_questions": 2,
+    "scope_compliant_top3": "2/2",
+    "issues": []
+  },
+  "C": {
+    "records": 24,
+    "correct_and_complete": 24,
+    "correct_start_only": 0,
+    "incorrect": 0,
+    "rate_strict": "24/24",
+    "rate_lenient_start_correct": "24/24",
+    "filter_questions": 2,
+    "scope_compliant_top3": "2/2",
+    "issues": []
+  },
+  "A2": {
+    "records": 24,
+    "correct_and_complete": 8,
+    "correct_start_only": 16,
+    "incorrect": 0,
+    "rate_strict": "8/24",
+    "rate_lenient_start_correct": "24/24",
+    "filter_questions": 2,
+    "scope_compliant_top3": "2/2",
+    "issues": [
+      "t01 rank1 k8s-workloads-pods-static-pods@0-994-60a1ab79: correct_start_only; chunk spans H2 pages 1-2",
+      "t01 rank2 k8s-workloads-pods-static-pods@894-1885-03938d9a: correct_start_only; chunk spans H2 pages 2-4",
+      "t01 rank3 k8s-workloads-pods-pod-lifecycle@6302-7302-6f055430: correct_start_only; chunk spans H2 pages 3-4",
+      "t02 rank1 k8s-workloads-pods-ephemeral-containers@2706-3545-6d5e7892: correct_start_only; chunk spans H2 pages 4-5",
+      "t02 rank3 k8s-workloads-pods-ephemeral-containers@1804-2804-9c5835ba: correct_start_only; chunk spans H2 pages 2-4",
+      "t03 rank3 k8s-workloads-pods-user-namespaces@9907-10903-914cc0f6: correct_start_only; chunk spans H2 pages 5-7",
+      "t04 rank1 k8s-workloads-pods-disruptions@1803-2802-fe889c10: correct_start_only; chunk spans H2 pages 2-3",
+      "t04 rank2 k8s-workloads-pods-disruptions@2702-3702-4bc6a47d: correct_start_only; chunk spans H2 pages 3-4",
+      "t04 rank3 k8s-workloads-pods-disruptions@0-997-b5e7dffd: correct_start_only; chunk spans H2 pages 1-2",
+      "t05 rank2 k8s-workloads-pods-pod-hostname@2768-3768-cd7e2711: correct_start_only; chunk spans H2 pages 4-5",
+      "t06 rank2 k8s-services-networking-topology-aware-routing@4519-5518-7415f113: correct_start_only; chunk spans H2 pages 6-7",
+      "t07 rank1 k8s-workloads-workload-api-disruption-and-priority@0-998-3ca31d13: correct_start_only; chunk spans H2 pages 1-2",
+      "t07 rank2 k8s-workloads-workload-api-disruption-and-priority@1795-2787-72a65dde: correct_start_only; chunk spans H2 pages 3-4",
+      "t07 rank3 k8s-workloads-workload-api-disruption-and-priority@898-1893-dd8b32ee: correct_start_only; chunk spans H2 pages 2-3",
+      "t08 rank1 k8s-services-networking-ingress@901-1895-3176ff37: correct_start_only; chunk spans H2 pages 2-3",
+      "t08 rank2 k8s-services-networking-ingress-controllers@0-999-884afd43: correct_start_only; chunk spans H2 pages 1-3"
+    ]
+  }
+}

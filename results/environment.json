@@ -1,0 +1,46 @@
+{
+  "recorded_at": "2026-11-13T11:32:18+00:00",
+  "python": "3.12.3",
+  "platform": "Linux-7.0.0-42-generic-x86_64-with-glibc2.39",
+  "cpu_count": 16,
+  "packages": {
+    "sentence-transformers": "6.3.0",
+    "torch": "2.15.0+cpu",
+    "transformers": "5.22.2",
+    "tokenizers": "0.23.3",
+    "numpy": "2.5.4",
+    "psycopg": "3.3.8",
+    "psycopg-binary": "3.3.8",
+    "python-dotenv": "1.2.4",
+    "huggingface-hub": "2.4.0"
+  },
+  "database": {
+    "postgresql": "16.16 (Debian 16.16-1.pgdg12+1)",
+    "pgvector": "0.8.7",
+    "docker_image": "pgvector/pgvector:0.8.7-pg16"
+  },
+  "embedding": {
+    "provider": "local (sentence-transformers)",
+    "model": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "dimensions": 384,
+    "max_seq_length": 512,
+    "device": "cpu",
+    "normalize_embeddings": true,
+    "metric": "cosine",
+    "query_prefix": "query: ",
+    "document_prefix": "passage: ",
+    "batch_size": 32,
+    "versions": {
+      "sentence-transformers": "6.3.0",
+      "torch": "2.15.0+cpu",
+      "transformers": "5.22.2"
+    },
+    "cost_usd": 0.0
+  },
+  "vector_store": {
+    "table": "chunks",
+    "metric": "cosine (<=>)",
+    "search": "exact (no ANN index)"
+  }
+}

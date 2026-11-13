@@ -1,0 +1,32 @@
+{
+  "units": 43,
+  "total_chars": 619252,
+  "by_section": {
+    "services-networking": 11,
+    "workloads": 32
+  },
+  "min_unit_chars": 2326,
+  "raw_chars": 622448,
+  "normalization_totals": {
+    "heading_ids_removed": 131,
+    "trailing_ws_lines": 165,
+    "empty_heading_restored_whatsnext": 41,
+    "blank_lines_collapsed": 25,
+    "anchor_lines_removed": 9,
+    "nbsp_replaced": 4,
+    "empty_heading_restored_prerequisites": 1
+  },
+  "by_subsection": {
+    "services-networking/(root)": 11,
+    "workloads/(root)": 2,
+    "workloads/autoscaling": 2,
+    "workloads/compositepodgroup-api": 1,
+    "workloads/controllers": 8,
+    "workloads/podgroup-api": 1,
+    "workloads/pods": 14,
+    "workloads/workload-api": 4
+  },
+  "pages_with_warnings": [],
+  "max_unit_chars": 59255,
+  "validated_at": "2026-11-13T11:20:44+00:00"
+}

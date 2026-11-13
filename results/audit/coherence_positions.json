@@ -1,0 +1,89 @@
+{
+  "seed": 20261113,
+  "per_section": {
+    "services-networking": 3,
+    "workloads": 7
+  },
+  "positions": [
+    {
+      "document_id": "k8s-services-networking-cluster-ip-allocation",
+      "position": 166,
+      "block_start": 0,
+      "block_end": 332,
+      "heading_path": "",
+      "sample_id": "c01"
+    },
+    {
+      "document_id": "k8s-services-networking-dual-stack",
+      "position": 4811,
+      "block_start": 4561,
+      "block_end": 5062,
+      "heading_path": "Services > Dual-stack Service configuration scenarios > Dual-stack options on new Services",
+      "sample_id": "c02"
+    },
+    {
+      "document_id": "k8s-services-networking-windows-networking",
+      "position": 5930,
+      "block_start": 5825,
+      "block_end": 6036,
+      "heading_path": "Network modes",
+      "sample_id": "c03"
+    },
+    {
+      "document_id": "k8s-workloads-autoscaling-horizontal-pod-autoscale",
+      "position": 566,
+      "block_start": 459,
+      "block_end": 674,
+      "heading_path": "",
+      "sample_id": "c04"
+    },
+    {
+      "document_id": "k8s-workloads-compositepodgroup-api-lifecycle",
+      "position": 1180,
+      "block_start": 922,
+      "block_end": 1439,
+      "heading_path": "Creation ordering",
+      "sample_id": "c05"
+    },
+    {
+      "document_id": "k8s-workloads-controllers-cron-jobs",
+      "position": 10809,
+      "block_start": 10677,
+      "block_end": 10941,
+      "heading_path": "CronJob limitations > Job creation",
+      "sample_id": "c06"
+    },
+    {
+      "document_id": "k8s-workloads-management",
+      "position": 7806,
+      "block_start": 7624,
+      "block_end": 7989,
+      "heading_path": "Updating your application without an outage",
+      "sample_id": "c07"
+    },
+    {
+      "document_id": "k8s-workloads-pods-downward-api",
+      "position": 129,
+      "block_start": 0,
+      "block_end": 259,
+      "heading_path": "",
+      "sample_id": "c08"
+    },
+    {
+      "document_id": "k8s-workloads-pods-user-namespaces",
+      "position": 7267,
+      "block_start": 7098,
+      "block_end": 7436,
+      "heading_path": "Set up a node to support user namespaces",
+      "sample_id": "c09"
+    },
+    {
+      "document_id": "k8s-workloads-workload-api-workloadbuilder",
+      "position": 9280,
+      "block_start": 9021,
+      "block_end": 9539,
+      "heading_path": "The workloadbuilder library > Validating a scheduling configuration > Opting out of declarative validation",
+      "sample_id": "c10"
+    }
+  ]
+}

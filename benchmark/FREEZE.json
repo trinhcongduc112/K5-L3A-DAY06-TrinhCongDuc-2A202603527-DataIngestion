@@ -1,0 +1,9 @@
+{
+  "file": "benchmark/questions.json",
+  "sha256": "a9f4240840547b71d7ecf3b77740c1b9ad35c5fa787d4bb91fbc199df61e5ff1",
+  "frozen_at_utc": "2026-11-13T11:17:54+00:00",
+  "questions": 30,
+  "dev": 22,
+  "test": 8,
+  "statement": "Frozen BEFORE any chunk was embedded or any retrieval was run. src/run.py refuses to evaluate if questions.json no longer matches this hash. If the benchmark is ever edited after this point, the edit and the reason must be logged in benchmark/CHANGELOG.md and the file re-frozen."
+}

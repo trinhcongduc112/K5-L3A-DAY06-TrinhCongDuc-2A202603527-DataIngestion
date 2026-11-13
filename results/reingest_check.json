@@ -1,0 +1,44 @@
+{
+  "strategy_used": "_reingest_check",
+  "documents": [
+    "k8s-workloads-pods-static-pods",
+    "k8s-workloads-pods-ephemeral-containers",
+    "k8s-services-networking-ingress-controllers"
+  ],
+  "changed_document": "k8s-workloads-pods-static-pods",
+  "removed_document": "k8s-services-networking-ingress-controllers",
+  "checked_at": "2026-11-13T11:33:44+00:00",
+  "1_first_ingest": {
+    "inserted": 20,
+    "updated": 0,
+    "deleted": 0,
+    "total_after": 20,
+    "chunks_in_this_ingest": 20
+  },
+  "2_same_version_again": {
+    "inserted": 0,
+    "updated": 20,
+    "deleted": 0,
+    "total_after": 20,
+    "chunks_in_this_ingest": 20
+  },
+  "3_one_document_changed": {
+    "inserted": 5,
+    "updated": 15,
+    "deleted": 5,
+    "total_after": 20,
+    "chunks_in_this_ingest": 20
+  },
+  "3_expected": {
+    "chunks_of_changed_document_before": 5,
+    "chunks_of_changed_document_after": 5
+  },
+  "4_after_change_rows": 20,
+  "5_document_removed_rows_deleted": 8,
+  "6_rows_after_removal": 12,
+  "verdict": {
+    "no_duplicates_on_reingest": true,
+    "obsolete_chunks_removed_when_document_changes": true,
+    "removed_document_chunks_deleted": true
+  }
+}

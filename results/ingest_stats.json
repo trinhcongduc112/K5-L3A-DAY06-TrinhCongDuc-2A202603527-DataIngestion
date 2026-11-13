@@ -1,0 +1,216 @@
+{
+  "strategies": {
+    "A": {
+      "config": {
+        "chunker": "fixed_size",
+        "size": 500,
+        "overlap": 50,
+        "filter_mode": "none",
+        "description": "Fixed-size windows of 500 chars, overlap 50, snapped to word boundaries"
+      },
+      "documents": 43,
+      "chunks": 1393,
+      "total_chars": 679430,
+      "chars": {
+        "min": 85,
+        "p5": 475,
+        "median": 496,
+        "mean": 487.7,
+        "p95": 500,
+        "max": 500
+      },
+      "tokens": {
+        "total": 182567,
+        "mean": 131.1,
+        "max": 243,
+        "over_model_limit": 0,
+        "model_limit": 512
+      },
+      "time_s": {
+        "chunking": 0.062,
+        "embedding": 87.56,
+        "tokenizing": 0.15,
+        "db_write": 0.59,
+        "total_ingest": 88.22
+      },
+      "texts_embedded_now": 1393,
+      "texts_reused_from_earlier_strategy": 0,
+      "cost_usd": 0.0,
+      "db_result": {
+        "inserted": 0,
+        "updated": 1393,
+        "deleted": 0,
+        "total_after": 1393
+      },
+      "documents_removed_from_index": 0,
+      "control_only": false,
+      "ingested_at": "2026-11-13T11:26:38+00:00"
+    },
+    "B": {
+      "config": {
+        "chunker": "by_paragraph",
+        "max_size": 1000,
+        "min_size": 300,
+        "filter_mode": "none",
+        "description": "Heading/paragraph-aware chunks, max 1000 chars, never crossing an H2"
+      },
+      "documents": 43,
+      "chunks": 967,
+      "total_chars": 617392,
+      "chars": {
+        "min": 43,
+        "p5": 202,
+        "median": 659,
+        "mean": 638.5,
+        "p95": 979,
+        "max": 1027
+      },
+      "tokens": {
+        "total": 164747,
+        "mean": 170.4,
+        "max": 399,
+        "over_model_limit": 0,
+        "model_limit": 512
+      },
+      "time_s": {
+        "chunking": 0.062,
+        "embedding": 78.81,
+        "tokenizing": 0.1,
+        "db_write": 0.34,
+        "total_ingest": 79.21
+      },
+      "texts_embedded_now": 965,
+      "texts_reused_from_earlier_strategy": 1,
+      "cost_usd": 0.0,
+      "db_result": {
+        "inserted": 0,
+        "updated": 967,
+        "deleted": 0,
+        "total_after": 967
+      },
+      "documents_removed_from_index": 0,
+      "control_only": false,
+      "ingested_at": "2026-11-13T11:27:58+00:00"
+    },
+    "C": {
+      "config": {
+        "chunker": "by_paragraph",
+        "max_size": 1000,
+        "min_size": 300,
+        "filter_mode": "metadata",
+        "description": "Same chunks as B + metadata filter (section/subsection) when the question has one"
+      },
+      "documents": 43,
+      "chunks": 967,
+      "total_chars": 617392,
+      "chars": {
+        "min": 43,
+        "p5": 202,
+        "median": 659,
+        "mean": 638.5,
+        "p95": 979,
+        "max": 1027
+      },
+      "tokens": {
+        "total": 164747,
+        "mean": 170.4,
+        "max": 399,
+        "over_model_limit": 0,
+        "model_limit": 512
+      },
+      "time_s": {
+        "chunking": 0.046,
+        "embedding": 0.0,
+        "tokenizing": 0.0,
+        "db_write": 0.36,
+        "total_ingest": 0.41
+      },
+      "texts_embedded_now": 0,
+      "texts_reused_from_earlier_strategy": 966,
+      "cost_usd": 0.0,
+      "db_result": {
+        "inserted": 967,
+        "updated": 0,
+        "deleted": 0,
+        "total_after": 967
+      },
+      "documents_removed_from_index": 0,
+      "control_only": false,
+      "ingested_at": "2026-11-13T11:27:58+00:00"
+    },
+    "A2": {
+      "config": {
+        "chunker": "fixed_size",
+        "size": 1000,
+        "overlap": 100,
+        "filter_mode": "none",
+        "description": "CONTROL: fixed-size windows of 1000 chars, overlap 100 (B's size cap)"
+      },
+      "documents": 43,
+      "chunks": 704,
+      "total_chars": 681584,
+      "chars": {
+        "min": 120,
+        "p5": 820,
+        "median": 996.0,
+        "mean": 968.2,
+        "p95": 1000,
+        "max": 1000
+      },
+      "tokens": {
+        "total": 180024,
+        "mean": 255.7,
+        "max": 396,
+        "over_model_limit": 0,
+        "model_limit": 512
+      },
+      "time_s": {
+        "chunking": 0.041,
+        "embedding": 84.78,
+        "tokenizing": 0.12,
+        "db_write": 0.26,
+        "total_ingest": 85.09
+      },
+      "texts_embedded_now": 701,
+      "texts_reused_from_earlier_strategy": 3,
+      "cost_usd": 0.0,
+      "db_result": {
+        "inserted": 704,
+        "updated": 0,
+        "deleted": 0,
+        "total_after": 704
+      },
+      "documents_removed_from_index": 0,
+      "control_only": true,
+      "ingested_at": "2026-11-13T11:29:23+00:00"
+    }
+  },
+  "run": {
+    "model_load_s": 15.22,
+    "embedding": {
+      "provider": "local (sentence-transformers)",
+      "model": "intfloat/multilingual-e5-small",
+      "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+      "dimensions": 384,
+      "max_seq_length": 512,
+      "device": "cpu",
+      "normalize_embeddings": true,
+      "metric": "cosine",
+      "query_prefix": "query: ",
+      "document_prefix": "passage: ",
+      "batch_size": 32,
+      "versions": {
+        "sentence-transformers": "6.3.0",
+        "torch": "2.15.0+cpu",
+        "transformers": "5.22.2"
+      },
+      "cost_usd": 0.0
+    },
+    "database": {
+      "postgresql": "16.16 (Debian 16.16-1.pgdg12+1)",
+      "pgvector": "0.8.7",
+      "docker_image": "pgvector/pgvector:0.8.7-pg16"
+    },
+    "last_run_at": "2026-11-13T11:29:23+00:00"
+  }
+}

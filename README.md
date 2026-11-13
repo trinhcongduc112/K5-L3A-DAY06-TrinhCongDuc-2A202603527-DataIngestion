@@ -45,3 +45,37 @@ Dùng cùng dữ liệu, model và câu hỏi cho cả ba cấu hình. Tách **1
 | Cách nộp bài | [SUBMISSION.md](SUBMISSION.md) |
 
 [data/format-example.json](data/format-example.json) chỉ minh họa định dạng, không phải corpus đủ điều kiện. Phần xử lý và benchmark do bạn tự hiện thực; không bắt buộc xây chatbot.
+
+---
+
+## Bài làm của học viên: cách chạy lại
+
+Corpus: 43 trang tài liệu Kubernetes (CC BY 4.0). Embedding chạy local: `intfloat/multilingual-e5-small` (384 chiều, CPU, $0). Vector store: PostgreSQL 16 + pgvector, tìm kiếm cosine chính xác. Báo cáo nằm ở [report/individual/2A202603527_TrinhCongDuc.md](report/individual/2A202603527_TrinhCongDuc.md).
+
+| Đường dẫn | Nội dung |
+|---|---|
+| [data/](data/README.md) | `pages/` (43 trang đã làm sạch), `manifest.json`/`.csv`, giấy phép, nguồn gốc và cách dựng lại corpus |
+| [benchmark/](benchmark/README.md) | 30 câu (22 dev / 8 test), evidence đã kiểm chứng, `FREEZE.json` (chốt trước mọi thí nghiệm) |
+| `starter/src/` | pipeline: `ingestion`, `chunking`, `embeddings`, `store`, `evaluation`, `run`, `config` |
+| `starter/scripts/` | dựng corpus, kiểm chứng benchmark, chọn mẫu coherence, audit metadata, sinh bảng tổng hợp |
+| `starter/tests/` | unit test: bất biến của chunk, chuẩn hóa, cách tính metric |
+| `results/` | thống kê ingest, metric dev/test, trace top-3, nhãn audit, log lỗi, môi trường chạy |
+| [artifacts/experiment_log.csv](artifacts/experiment_log.csv) | cấu hình, giả thuyết và kết quả A/B/C (+ đối chứng A2) |
+
+```bash
+cd starter
+python3 -m venv .venv && source .venv/bin/activate        # Windows: .venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt -r requirements-embedding.txt
+cp .env.example .env                                       # EMBEDDING_MODEL đã điền sẵn
+docker compose -p day6_student_starter up -d --wait
+python scripts/check_setup.py                              # kiểm tra PostgreSQL + pgvector
+python -m unittest discover -s tests -t .                  # 15 test
+python -m src.run validate                                 # đọc, chuẩn hóa, log từng trang
+python -m src.run ingest                                   # A, B, C, A2 → pgvector (vài phút trên CPU; lần đầu tải model ~470 MB)
+python -m src.run evaluate --split dev
+python -m src.run evaluate --split test                    # bị chặn nếu chưa có results/selection_decision.md
+python -m src.run reingest-check                           # nạp lại không nhân đôi, tài liệu đổi/xóa
+python scripts/audit_metadata.py --split test
+python scripts/make_summary_tables.py                      # results/summary_tables.md
+python scripts/verify_submission.py                        # kiểm tra lại mọi yêu cầu nộp bài (chỉ đọc, không ghi đè kết quả)
+```

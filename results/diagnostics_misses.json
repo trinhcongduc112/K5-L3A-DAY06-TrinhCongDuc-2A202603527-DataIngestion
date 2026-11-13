@@ -1,0 +1,444 @@
+{
+  "depth": 50,
+  "misses": [
+    {
+      "split": "dev",
+      "strategy": "A",
+      "question_id": "d01",
+      "failure_mode_top3": "evidence_split",
+      "first_evidence_rank_within_top50": null
+    },
+    {
+      "split": "dev",
+      "strategy": "A",
+      "question_id": "d03",
+      "failure_mode_top3": "wrong_document",
+      "first_evidence_rank_within_top50": 13
+    },
+    {
+      "split": "dev",
+      "strategy": "A",
+      "question_id": "d04",
+      "failure_mode_top3": "evidence_split",
+      "first_evidence_rank_within_top50": 5
+    },
+    {
+      "split": "dev",
+      "strategy": "A",
+      "question_id": "d07",
+      "failure_mode_top3": "evidence_split",
+      "first_evidence_rank_within_top50": 4
+    },
+    {
+      "split": "dev",
+      "strategy": "A",
+      "question_id": "d08",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 4
+    },
+    {
+      "split": "dev",
+      "strategy": "A",
+      "question_id": "d10",
+      "failure_mode_top3": "evidence_split",
+      "first_evidence_rank_within_top50": null
+    },
+    {
+      "split": "dev",
+      "strategy": "A",
+      "question_id": "d14",
+      "failure_mode_top3": "evidence_split",
+      "first_evidence_rank_within_top50": null
+    },
+    {
+      "split": "dev",
+      "strategy": "A",
+      "question_id": "d15",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 5
+    },
+    {
+      "split": "dev",
+      "strategy": "A",
+      "question_id": "d16",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 4
+    },
+    {
+      "split": "dev",
+      "strategy": "A",
+      "question_id": "d18",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 20
+    },
+    {
+      "split": "dev",
+      "strategy": "A",
+      "question_id": "d21",
+      "failure_mode_top3": "evidence_split",
+      "first_evidence_rank_within_top50": null
+    },
+    {
+      "split": "dev",
+      "strategy": "B",
+      "question_id": "d03",
+      "failure_mode_top3": "wrong_document",
+      "first_evidence_rank_within_top50": 24
+    },
+    {
+      "split": "dev",
+      "strategy": "B",
+      "question_id": "d09",
+      "failure_mode_top3": "wrong_document",
+      "first_evidence_rank_within_top50": 6
+    },
+    {
+      "split": "dev",
+      "strategy": "B",
+      "question_id": "d10",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 6
+    },
+    {
+      "split": "dev",
+      "strategy": "B",
+      "question_id": "d22",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 5
+    },
+    {
+      "split": "dev",
+      "strategy": "C",
+      "question_id": "d03",
+      "failure_mode_top3": "wrong_document",
+      "first_evidence_rank_within_top50": 24
+    },
+    {
+      "split": "dev",
+      "strategy": "C",
+      "question_id": "d09",
+      "failure_mode_top3": "wrong_document",
+      "first_evidence_rank_within_top50": 6
+    },
+    {
+      "split": "dev",
+      "strategy": "C",
+      "question_id": "d10",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 6
+    },
+    {
+      "split": "dev",
+      "strategy": "C",
+      "question_id": "d22",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 5
+    },
+    {
+      "split": "dev",
+      "strategy": "A2",
+      "question_id": "d03",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 7
+    },
+    {
+      "split": "dev",
+      "strategy": "A2",
+      "question_id": "d09",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 7
+    },
+    {
+      "split": "dev",
+      "strategy": "A2",
+      "question_id": "d13",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 5
+    },
+    {
+      "split": "dev",
+      "strategy": "A2",
+      "question_id": "d14",
+      "failure_mode_top3": "evidence_split",
+      "first_evidence_rank_within_top50": 10
+    },
+    {
+      "split": "dev",
+      "strategy": "A2",
+      "question_id": "d16",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 6
+    },
+    {
+      "split": "dev",
+      "strategy": "A2",
+      "question_id": "d20",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 4
+    },
+    {
+      "split": "dev",
+      "strategy": "A2",
+      "question_id": "d21",
+      "failure_mode_top3": "evidence_split",
+      "first_evidence_rank_within_top50": null
+    },
+    {
+      "split": "test",
+      "strategy": "A",
+      "question_id": "t03",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 14
+    },
+    {
+      "split": "test",
+      "strategy": "A",
+      "question_id": "t04",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 20
+    },
+    {
+      "split": "test",
+      "strategy": "A",
+      "question_id": "t06",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": null
+    },
+    {
+      "split": "test",
+      "strategy": "A",
+      "question_id": "t08",
+      "failure_mode_top3": "evidence_split",
+      "first_evidence_rank_within_top50": null
+    },
+    {
+      "split": "test",
+      "strategy": "B",
+      "question_id": "t03",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 8
+    },
+    {
+      "split": "test",
+      "strategy": "B",
+      "question_id": "t06",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 5
+    },
+    {
+      "split": "test",
+      "strategy": "C",
+      "question_id": "t03",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 8
+    },
+    {
+      "split": "test",
+      "strategy": "C",
+      "question_id": "t06",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 5
+    },
+    {
+      "split": "test",
+      "strategy": "A2",
+      "question_id": "t03",
+      "failure_mode_top3": "right_document_other_passage",
+      "first_evidence_rank_within_top50": 14
+    },
+    {
+      "split": "test",
+      "strategy": "A2",
+      "question_id": "t06",
+      "failure_mode_top3": "evidence_split",
+      "first_evidence_rank_within_top50": null
+    }
+  ],
+  "straddling_chunks": {
+    "A": {
+      "chunks": 1393,
+      "straddle_h2": 293,
+      "share": 0.21
+    },
+    "A2": {
+      "chunks": 704,
+      "straddle_h2": 258,
+      "share": 0.366
+    },
+    "B": {
+      "chunks": 967,
+      "straddle_h2": 0,
+      "share": 0.0
+    },
+    "C": {
+      "chunks": 967,
+      "straddle_h2": 0,
+      "share": 0.0
+    }
+  },
+  "evidence_coverage_upper_bound": {
+    "A": {
+      "questions_with_evidence_in_one_chunk": "24/30",
+      "never_retrievable_whole": [
+        "d01",
+        "d10",
+        "d14",
+        "d21",
+        "t06",
+        "t08"
+      ]
+    },
+    "B": {
+      "questions_with_evidence_in_one_chunk": "30/30",
+      "never_retrievable_whole": []
+    },
+    "A2": {
+      "questions_with_evidence_in_one_chunk": "28/30",
+      "never_retrievable_whole": [
+        "d21",
+        "t06"
+      ]
+    }
+  },
+  "evidence_coverage_note": "Share of the 30 questions for which at least one chunk of the strategy contains the whole accepted evidence; questions listed can never be a strict hit at any k.",
+  "paired_hit_at_3_comparisons": {
+    "A_vs_B_dev": {
+      "only_B": [
+        "d01",
+        "d04",
+        "d07",
+        "d08",
+        "d14",
+        "d15",
+        "d16",
+        "d18",
+        "d21"
+      ],
+      "only_A": [
+        "d09",
+        "d22"
+      ],
+      "exact_mcnemar_p_two_sided": 0.0654
+    },
+    "A_vs_B_test": {
+      "only_B": [
+        "t04",
+        "t08"
+      ],
+      "only_A": [],
+      "exact_mcnemar_p_two_sided": 0.5
+    },
+    "A_vs_B_dev+test": {
+      "only_B": [
+        "d01",
+        "d04",
+        "d07",
+        "d08",
+        "d14",
+        "d15",
+        "d16",
+        "d18",
+        "d21",
+        "t04",
+        "t08"
+      ],
+      "only_A": [
+        "d09",
+        "d22"
+      ],
+      "exact_mcnemar_p_two_sided": 0.0225
+    },
+    "A2_vs_B_dev": {
+      "only_B": [
+        "d13",
+        "d14",
+        "d16",
+        "d20",
+        "d21"
+      ],
+      "only_A2": [
+        "d10",
+        "d22"
+      ],
+      "exact_mcnemar_p_two_sided": 0.4531
+    },
+    "A2_vs_B_test": {
+      "only_B": [],
+      "only_A2": [],
+      "exact_mcnemar_p_two_sided": 1.0
+    },
+    "A2_vs_B_dev+test": {
+      "only_B": [
+        "d13",
+        "d14",
+        "d16",
+        "d20",
+        "d21"
+      ],
+      "only_A2": [
+        "d10",
+        "d22"
+      ],
+      "exact_mcnemar_p_two_sided": 0.4531
+    },
+    "A_vs_A2_dev": {
+      "only_A2": [
+        "d01",
+        "d04",
+        "d07",
+        "d08",
+        "d10",
+        "d15",
+        "d18"
+      ],
+      "only_A": [
+        "d09",
+        "d13",
+        "d20"
+      ],
+      "exact_mcnemar_p_two_sided": 0.3438
+    },
+    "A_vs_A2_test": {
+      "only_A2": [
+        "t04",
+        "t08"
+      ],
+      "only_A": [],
+      "exact_mcnemar_p_two_sided": 0.5
+    },
+    "A_vs_A2_dev+test": {
+      "only_A2": [
+        "d01",
+        "d04",
+        "d07",
+        "d08",
+        "d10",
+        "d15",
+        "d18",
+        "t04",
+        "t08"
+      ],
+      "only_A": [
+        "d09",
+        "d13",
+        "d20"
+      ],
+      "exact_mcnemar_p_two_sided": 0.146
+    },
+    "B_vs_C_dev": {
+      "only_C": [],
+      "only_B": [],
+      "exact_mcnemar_p_two_sided": 1.0
+    },
+    "B_vs_C_test": {
+      "only_C": [],
+      "only_B": [],
+      "exact_mcnemar_p_two_sided": 1.0
+    },
+    "B_vs_C_dev+test": {
+      "only_C": [],
+      "only_B": [],
+      "exact_mcnemar_p_two_sided": 1.0
+    }
+  }
+}

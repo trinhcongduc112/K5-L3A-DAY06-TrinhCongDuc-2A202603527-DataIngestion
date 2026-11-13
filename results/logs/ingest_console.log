@@ -1,0 +1,10 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 4923.10it/s]
+/home/duc/Technology/AI_IN_ACTION/K5-L3A-DAY06-TrinhCongDuc-2A202603527-DataIngestion/starter/src/embeddings.py:55: FutureWarning: The `get_sentence_embedding_dimension` method has been renamed to `get_embedding_dimension`.
+  self.dimensions = int(self.model.get_sentence_embedding_dimension())
+[A] chunks=1393 tokens(max)=243 embedded_now=1393 time=88.22s db={'inserted': 0, 'updated': 1393, 'deleted': 0, 'total_after': 1393}
+[B] chunks=967 tokens(max)=399 embedded_now=965 time=79.21s db={'inserted': 0, 'updated': 967, 'deleted': 0, 'total_after': 967}
+[C] chunks=967 tokens(max)=399 embedded_now=0 time=0.41s db={'inserted': 967, 'updated': 0, 'deleted': 0, 'total_after': 967}
+[A2] chunks=704 tokens(max)=396 embedded_now=701 time=85.09s db={'inserted': 704, 'updated': 0, 'deleted': 0, 'total_after': 704}
+rows per strategy: {'A': 1393, 'A2': 704, 'B': 967, 'C': 967}
+python exit code: 0

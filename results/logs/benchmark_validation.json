@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-11-13T11:26:04+00:00",
+  "questions": 30,
+  "dev": 22,
+  "test": 8,
+  "with_filter": {
+    "total": 6,
+    "dev": 4,
+    "test": 2
+  },
+  "types": {
+    "dev": {
+      "direct": 6,
+      "condition_exception": 6,
+      "paraphrase": 6,
+      "metadata_scope": 4
+    },
+    "test": {
+      "direct": 2,
+      "paraphrase": 2,
+      "condition_exception": 2,
+      "metadata_scope": 2
+    }
+  },
+  "gold_documents": {
+    "dev": 21,
+    "test": 8,
+    "overlap": []
+  },
+  "questions_with_alternative_evidence": [
+    "d07",
+    "d08"
+  ],
+  "evidence_chars": {
+    "min": 80,
+    "max": 403,
+    "mean": 197.7
+  },
+  "errors": [],
+  "warnings": []
+}

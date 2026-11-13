@@ -1,0 +1,453 @@
+sample_id,strategy,document_id,position,heading_path_at_position,chunk_id,chunk_chars,chunk_text
+c01,A,k8s-services-networking-cluster-ip-allocation,166,,k8s-services-networking-cluster-ip-allocation@0-499-f009072f,499,"In Kubernetes, Services are an abstract way to expose
+an application running on a set of Pods. Services
+can have a cluster-scoped virtual IP address (using a Service of `type: ClusterIP`).
+Clients can connect using that virtual IP address, and Kubernetes then load-balances traffic to that
+Service across the different backing Pods.
+
+## How Service ClusterIPs are allocated?
+
+When Kubernetes needs to assign a virtual IP address for a Service,
+that assignment happens one of two ways:
+
+_dynamically_"
+c02,A,k8s-services-networking-dual-stack,4811,Services > Dual-stack Service configuration scenarios > Dual-stack options on new Services,k8s-services-networking-dual-stack@4493-4992-66bf5577,499,"headless Services with selectors
+   will behave in this same way.)
+
+1. This Service specification explicitly defines `PreferDualStack` in `.spec.ipFamilyPolicy`. When
+   you create this Service on a dual-stack cluster, Kubernetes assigns both IPv4 and IPv6
+   addresses for the service. The control plane updates the `.spec` for the Service to record the IP
+   address assignments. The field `.spec.clusterIPs` is the primary field, and contains both assigned
+   IP addresses; `.spec.clusterIP` is a"
+c03,A,k8s-services-networking-windows-networking,5930,Network modes,k8s-services-networking-windows-networking@5877-6375-1bf60e78,498,"(Cluster IP)
+* Pod → Service (PQDN, but only if there are no ""."")
+* Pod → Service (FQDN)
+* Pod → external (IP)
+* Pod → external (DNS)
+* Node → Pod
+* Pod → Node
+
+## IP address management (IPAM)
+
+The following IPAM options are supported on Windows:
+
+* host-local
+* azure-vnet-ipam (for azure-cni only)
+* Windows Server IPAM (fallback option if no IPAM is set)
+
+## Direct Server Return (DSR)
+
+Load balancing mode where the IP address fixups and the LBNAT occurs at the container vSwitch port directly;"
+c04,A,k8s-workloads-autoscaling-horizontal-pod-autoscale,566,,k8s-workloads-autoscaling-horizontal-pod-autoscale@459-955-a2bc9298,496,"If the load decreases, and the number of Pods is above the configured minimum,
+the HorizontalPodAutoscaler instructs the workload resource (the Deployment, StatefulSet,
+or other similar resource) to scale back down.
+
+Horizontal pod autoscaling does not apply to objects that can't be scaled (for example:
+a DaemonSet.)
+
+The HorizontalPodAutoscaler is implemented as a Kubernetes API resource and a
+controller.
+The resource determines the behavior of the controller.
+The horizontal pod autoscaling"
+c05,A,k8s-workloads-compositepodgroup-api-lifecycle,1180,Creation ordering,k8s-workloads-compositepodgroup-api-lifecycle@900-1368-f0e6253a,468,"in a
+top-down order:
+
+1. **`Workload`**: Defines static templates (`CompositePodGroupTemplates` and `PodGroupTemplates`).
+2. **Root `CompositePodGroup`**: Created with `spec.workloadRef` pointing to the root template in
+   the `Workload`.
+3. **Descendant `CompositePodGroups` and `PodGroups`**: Created top-down. Each child group specifies
+   its parent by using `spec.parentCompositePodGroupName` and its template using `spec.workloadRef`.
+4. **`Pods`**: Created with"
+c06,A,k8s-workloads-controllers-cron-jobs,10809,CronJob limitations > Job creation,k8s-workloads-controllers-cron-jobs@10728-11228-9e156ff1,500,"be created at its scheduled time. For example, if `concurrencyPolicy` is set to `Forbid` and a CronJob was attempted to be scheduled when there was a previous schedule still running, then it would count as missed.
+
+For example, suppose a CronJob is set to schedule a new Job every one minute beginning at `08:30:00`, and its
+`startingDeadlineSeconds` field is not set. If the CronJob controller happens to
+be down from `08:29:00` to `10:21:00`, more than 100 schedules are missed. When the controller"
+c07,A,k8s-workloads-management,7806,Updating your application without an outage,k8s-workloads-management@7639-8136-866e1bd6,497,"Deployment will declaratively update the deployed nginx application progressively
+behind the scene. It ensures that only a certain number of old replicas may be down while they are
+being updated, and only a certain number of new replicas may be created above the desired number
+of pods. To learn more details about how this happens,
+visit Deployment.
+
+You can use rollouts with DaemonSets, Deployments, or StatefulSets.
+
+### Managing rollouts
+
+You can use `kubectl rollout` to manage a
+progressive"
+c08,A,k8s-workloads-pods-downward-api,129,,k8s-workloads-pods-downward-api@0-496-850780a8,496,"It is sometimes useful for a container to have information about itself, without
+being overly coupled to Kubernetes. The _downward API_ allows containers to consume
+information about themselves or the cluster without using the Kubernetes client
+or API server.
+
+An example is an existing application that assumes a particular well-known
+environment variable holds a unique identifier. One possibility is to wrap the
+application, but that is tedious and error-prone, and it violates the goal of low"
+c09,A,k8s-workloads-pods-user-namespaces,7267,Set up a node to support user namespaces,k8s-workloads-pods-user-namespaces@7216-7713-839d5c51,497,"where a pod can potentially read arbitrary
+files in the host. If the UIDs/GIDs of the pod and the host don't overlap, it is
+limited what a pod would be able to do: the pod UID/GID won't match the host's
+file owner/group.
+
+The kubelet can use a custom range for user IDs and group IDs for pods. To
+configure a custom range, the node needs to have:
+
+ * A user `kubelet` in the system (you cannot use any other username here)
+ * The binary `getsubids` installed (part of [shadow-utils][shadow-utils])"
+c10,A,k8s-workloads-workload-api-workloadbuilder,9280,The workloadbuilder library > Validating a scheduling configuration > Opting out of declarative validation,k8s-workloads-workload-api-workloadbuilder@9051-9545-c721bcd6,494,"leave declarative validation enabled, which is the default.
+  Nothing else applies those structural rules to a custom resource, so a single `Validate`
+  call covers both layers.
+* **In-tree controllers** set `DisableDeclarativeValidation`, because the API server already
+  runs declarative validation on the embedded blocks while validating the parent object.
+  Skipping the first layer avoids checking the same fields twice, leaving `Validate` to run
+  only the controller-policy checks.
+
+####"
+c01,B,k8s-services-networking-cluster-ip-allocation,166,,k8s-services-networking-cluster-ip-allocation@0-332-7e89ddb1,332,"In Kubernetes, Services are an abstract way to expose
+an application running on a set of Pods. Services
+can have a cluster-scoped virtual IP address (using a Service of `type: ClusterIP`).
+Clients can connect using that virtual IP address, and Kubernetes then load-balances traffic to that
+Service across the different backing Pods."
+c02,B,k8s-services-networking-dual-stack,4811,Services > Dual-stack Service configuration scenarios > Dual-stack options on new Services,k8s-services-networking-dual-stack@4561-5483-5933d405,922,"1. This Service specification explicitly defines `PreferDualStack` in `.spec.ipFamilyPolicy`. When
+   you create this Service on a dual-stack cluster, Kubernetes assigns both IPv4 and IPv6
+   addresses for the service. The control plane updates the `.spec` for the Service to record the IP
+   address assignments. The field `.spec.clusterIPs` is the primary field, and contains both assigned
+   IP addresses; `.spec.clusterIP` is a secondary field with its value calculated from
+   `.spec.clusterIPs`.
+
+   * For the `.spec.clusterIP` field, the control plane records the IP address that is from the
+     same address family as the first service cluster IP range.
+   * On a single-stack cluster, the `.spec.clusterIPs` and `.spec.clusterIP` fields both only list
+     one address.
+   * On a cluster with dual-stack enabled, specifying `RequireDualStack` in `.spec.ipFamilyPolicy`
+     behaves the same as `PreferDualStack`."
+c03,B,k8s-services-networking-windows-networking,5930,Network modes,k8s-services-networking-windows-networking@5825-6036-da9c92e9,211,"* Pod → Pod (IP)
+* Pod → Pod (Name)
+* Pod → Service (Cluster IP)
+* Pod → Service (PQDN, but only if there are no ""."")
+* Pod → Service (FQDN)
+* Pod → external (IP)
+* Pod → external (DNS)
+* Node → Pod
+* Pod → Node"
+c04,B,k8s-workloads-autoscaling-horizontal-pod-autoscale,566,,k8s-workloads-autoscaling-horizontal-pod-autoscale@0-777-90dc2af3,777,"In Kubernetes, a _HorizontalPodAutoscaler_ automatically updates a workload resource (such as
+a Deployment or
+StatefulSet), with the
+aim of automatically scaling capacity to match demand.
+
+Horizontal scaling means that the response to increased load is to deploy more
+Pods.
+This is different from _vertical_ scaling, which for Kubernetes would mean
+assigning more resources (for example: memory or CPU) to the Pods that are already
+running for the workload.
+
+If the load decreases, and the number of Pods is above the configured minimum,
+the HorizontalPodAutoscaler instructs the workload resource (the Deployment, StatefulSet,
+or other similar resource) to scale back down.
+
+Horizontal pod autoscaling does not apply to objects that can't be scaled (for example:
+a DaemonSet.)"
+c05,B,k8s-workloads-compositepodgroup-api-lifecycle,1180,Creation ordering,k8s-workloads-compositepodgroup-api-lifecycle@786-1665-2ff717a2,879,"## Creation ordering
+
+To ensure proper hierarchy resolution and scheduling, workload controllers create resources in a
+top-down order:
+
+1. **`Workload`**: Defines static templates (`CompositePodGroupTemplates` and `PodGroupTemplates`).
+2. **Root `CompositePodGroup`**: Created with `spec.workloadRef` pointing to the root template in
+   the `Workload`.
+3. **Descendant `CompositePodGroups` and `PodGroups`**: Created top-down. Each child group specifies
+   its parent by using `spec.parentCompositePodGroupName` and its template using `spec.workloadRef`.
+4. **`Pods`**: Created with `spec.schedulingGroup.podGroupName` pointing to their leaf `PodGroup`.
+
+If a group references a parent `CompositePodGroup` that does not exist, or if a Pod references
+a `PodGroup` that has not yet been created, the scheduler holds off scheduling until all parent
+resources in the hierarchy exist."
+c06,B,k8s-workloads-controllers-cron-jobs,10809,CronJob limitations > Job creation,k8s-workloads-controllers-cron-jobs@10301-10941-7175b979,640,"It is important to note that if the `startingDeadlineSeconds` field is set (not `nil`), the controller counts how many missed Jobs occurred from the value of `startingDeadlineSeconds` until now rather than from the last scheduled time until now. For example, if `startingDeadlineSeconds` is `200`, the controller counts how many missed Jobs occurred in the last 200 seconds.
+
+A CronJob is counted as missed if it has failed to be created at its scheduled time. For example, if `concurrencyPolicy` is set to `Forbid` and a CronJob was attempted to be scheduled when there was a previous schedule still running, then it would count as missed."
+c07,B,k8s-workloads-management,7806,Updating your application without an outage,k8s-workloads-management@7094-8058-a2c77680,964,"and allow Kubernetes to add more temporary replicas during a rollout, by setting a _surge maximum_ of
+100%:
+
+```shell
+kubectl patch --type='merge' -p '{""spec"":{""strategy"":{""rollingUpdate"":{""maxSurge"": ""100%"" }}}}'
+```
+
+```none
+deployment.apps/my-nginx patched
+```
+
+To update to version 1.16.1, change `.spec.template.spec.containers[0].image` from `nginx:1.14.2`
+to `nginx:1.16.1` using `kubectl edit`:
+
+```shell
+kubectl edit deployment/my-nginx
+# Change the manifest to use the newer container image, then save your changes
+```
+
+That's it! The Deployment will declaratively update the deployed nginx application progressively
+behind the scene. It ensures that only a certain number of old replicas may be down while they are
+being updated, and only a certain number of new replicas may be created above the desired number
+of pods. To learn more details about how this happens,
+visit Deployment.
+
+You can use rollouts with DaemonSets, Deployments, or StatefulSets."
+c08,B,k8s-workloads-pods-downward-api,129,,k8s-workloads-pods-downward-api@0-892-9a624457,892,"It is sometimes useful for a container to have information about itself, without
+being overly coupled to Kubernetes. The _downward API_ allows containers to consume
+information about themselves or the cluster without using the Kubernetes client
+or API server.
+
+An example is an existing application that assumes a particular well-known
+environment variable holds a unique identifier. One possibility is to wrap the
+application, but that is tedious and error-prone, and it violates the goal of low
+coupling. A better option would be to use the Pod's name as an identifier, and
+inject the Pod's name into the well-known environment variable.
+
+In Kubernetes, there are two ways to expose Pod and container fields to a running container:
+
+* as environment variables
+* as files in a `downwardAPI` volume
+
+Together, these two ways of exposing Pod and container fields are called the
+_downward API_."
+c09,B,k8s-workloads-pods-user-namespaces,7267,Set up a node to support user namespaces,k8s-workloads-pods-user-namespaces@6747-7562-db3ad4ca,815,"## Set up a node to support user namespaces
+
+By default, the kubelet assigns pods UIDs/GIDs above the range 0-65535, based on
+the assumption that the host's files and processes use UIDs/GIDs within this
+range, which is standard for most Linux distributions. This approach prevents
+any overlap between the UIDs/GIDs of the host and those of the pods.
+
+Avoiding the overlap is important to mitigate the impact of vulnerabilities such
+as [CVE-2021-25741][CVE-2021-25741], where a pod can potentially read arbitrary
+files in the host. If the UIDs/GIDs of the pod and the host don't overlap, it is
+limited what a pod would be able to do: the pod UID/GID won't match the host's
+file owner/group.
+
+The kubelet can use a custom range for user IDs and group IDs for pods. To
+configure a custom range, the node needs to have:"
+c10,B,k8s-workloads-workload-api-workloadbuilder,9280,The workloadbuilder library > Validating a scheduling configuration > Opting out of declarative validation,k8s-workloads-workload-api-workloadbuilder@8877-9539-9aa9f62d,662,"#### Opting out of declarative validation
+
+Whether you want the first layer depends on where your controller runs, and one option
+controls it:
+
+* **Out-of-tree controllers** leave declarative validation enabled, which is the default.
+  Nothing else applies those structural rules to a custom resource, so a single `Validate`
+  call covers both layers.
+* **In-tree controllers** set `DisableDeclarativeValidation`, because the API server already
+  runs declarative validation on the embedded blocks while validating the parent object.
+  Skipping the first layer avoids checking the same fields twice, leaving `Validate` to run
+  only the controller-policy checks."
+c01,A2,k8s-services-networking-cluster-ip-allocation,166,,k8s-services-networking-cluster-ip-allocation@0-998-9f063966,998,"In Kubernetes, Services are an abstract way to expose
+an application running on a set of Pods. Services
+can have a cluster-scoped virtual IP address (using a Service of `type: ClusterIP`).
+Clients can connect using that virtual IP address, and Kubernetes then load-balances traffic to that
+Service across the different backing Pods.
+
+## How Service ClusterIPs are allocated?
+
+When Kubernetes needs to assign a virtual IP address for a Service,
+that assignment happens one of two ways:
+
+_dynamically_
+: the cluster's control plane automatically picks a free IP address from within the configured IP range for `type: ClusterIP` Services.
+
+_statically_
+: you specify an IP address of your choice, from within the configured IP range for Services.
+
+Across your whole cluster, every Service `ClusterIP` must be unique.
+Trying to create a Service with a specific `ClusterIP` that has already
+been allocated will return an error.
+
+## Why do you need to reserve Service Cluster IPs?
+
+Sometimes you may want"
+c02,A2,k8s-services-networking-dual-stack,4811,Services > Dual-stack Service configuration scenarios > Dual-stack options on new Services,k8s-services-networking-dual-stack@4493-5487-fbcf54d3,994,"headless Services with selectors
+   will behave in this same way.)
+
+1. This Service specification explicitly defines `PreferDualStack` in `.spec.ipFamilyPolicy`. When
+   you create this Service on a dual-stack cluster, Kubernetes assigns both IPv4 and IPv6
+   addresses for the service. The control plane updates the `.spec` for the Service to record the IP
+   address assignments. The field `.spec.clusterIPs` is the primary field, and contains both assigned
+   IP addresses; `.spec.clusterIP` is a secondary field with its value calculated from
+   `.spec.clusterIPs`.
+
+   * For the `.spec.clusterIP` field, the control plane records the IP address that is from the
+     same address family as the first service cluster IP range.
+   * On a single-stack cluster, the `.spec.clusterIPs` and `.spec.clusterIP` fields both only list
+     one address.
+   * On a cluster with dual-stack enabled, specifying `RequireDualStack` in `.spec.ipFamilyPolicy`
+     behaves the same as `PreferDualStack`.
+
+1."
+c03,A2,k8s-services-networking-windows-networking,5930,Network modes,k8s-services-networking-windows-networking@5403-6399-29b215cb,996,"configuration file (cni.conf), and aggregates it with the environment
+variables from the FlannelD generated subnet.env file. It then delegates to one of
+the reference CNI plugins for network plumbing, and sends the correct configuration
+containing the node-assigned subnet to the IPAM plugin (for example: `host-local`).
+
+For Node, Pod, and Service objects, the following network flows are supported for
+TCP/UDP traffic:
+
+* Pod → Pod (IP)
+* Pod → Pod (Name)
+* Pod → Service (Cluster IP)
+* Pod → Service (PQDN, but only if there are no ""."")
+* Pod → Service (FQDN)
+* Pod → external (IP)
+* Pod → external (DNS)
+* Node → Pod
+* Pod → Node
+
+## IP address management (IPAM)
+
+The following IPAM options are supported on Windows:
+
+* host-local
+* azure-vnet-ipam (for azure-cni only)
+* Windows Server IPAM (fallback option if no IPAM is set)
+
+## Direct Server Return (DSR)
+
+Load balancing mode where the IP address fixups and the LBNAT occurs at the container vSwitch port directly;
+service traffic arrives"
+c04,A2,k8s-workloads-autoscaling-horizontal-pod-autoscale,566,,k8s-workloads-autoscaling-horizontal-pod-autoscale@0-997-90126f19,997,"In Kubernetes, a _HorizontalPodAutoscaler_ automatically updates a workload resource (such as
+a Deployment or
+StatefulSet), with the
+aim of automatically scaling capacity to match demand.
+
+Horizontal scaling means that the response to increased load is to deploy more
+Pods.
+This is different from _vertical_ scaling, which for Kubernetes would mean
+assigning more resources (for example: memory or CPU) to the Pods that are already
+running for the workload.
+
+If the load decreases, and the number of Pods is above the configured minimum,
+the HorizontalPodAutoscaler instructs the workload resource (the Deployment, StatefulSet,
+or other similar resource) to scale back down.
+
+Horizontal pod autoscaling does not apply to objects that can't be scaled (for example:
+a DaemonSet.)
+
+The HorizontalPodAutoscaler is implemented as a Kubernetes API resource and a
+controller.
+The resource determines the behavior of the controller.
+The horizontal pod autoscaling controller, running within the Kubernetes"
+c05,A2,k8s-workloads-compositepodgroup-api-lifecycle,1180,Creation ordering,k8s-workloads-compositepodgroup-api-lifecycle@900-1900-c105d106,1000,"in a
+top-down order:
+
+1. **`Workload`**: Defines static templates (`CompositePodGroupTemplates` and `PodGroupTemplates`).
+2. **Root `CompositePodGroup`**: Created with `spec.workloadRef` pointing to the root template in
+   the `Workload`.
+3. **Descendant `CompositePodGroups` and `PodGroups`**: Created top-down. Each child group specifies
+   its parent by using `spec.parentCompositePodGroupName` and its template using `spec.workloadRef`.
+4. **`Pods`**: Created with `spec.schedulingGroup.podGroupName` pointing to their leaf `PodGroup`.
+
+If a group references a parent `CompositePodGroup` that does not exist, or if a Pod references
+a `PodGroup` that has not yet been created, the scheduler holds off scheduling until all parent
+resources in the hierarchy exist.
+
+## Limitations and validation rules
+
+- **Consistent scheduler name**: All Pods across an entire `CompositePodGroup` hierarchy must use
+  the same `spec.schedulerName`. If a mismatch is detected, the scheduler rejects the hierarchy as"
+c06,A2,k8s-workloads-controllers-cron-jobs,10809,CronJob limitations > Job creation,k8s-workloads-controllers-cron-jobs@9958-10955-d30445c2,997,"or decrease .spec.startingDeadlineSeconds or check clock skew
+```
+This behavior is applicable for catch-up scheduling and does not mean the CronJob will stop running.
+
+For example, when using `concurrencyPolicy: Forbid`, long-running Jobs may cause scheduled times to be skipped, but a new Job can be created once the previous Job completes.
+
+It is important to note that if the `startingDeadlineSeconds` field is set (not `nil`), the controller counts how many missed Jobs occurred from the value of `startingDeadlineSeconds` until now rather than from the last scheduled time until now. For example, if `startingDeadlineSeconds` is `200`, the controller counts how many missed Jobs occurred in the last 200 seconds.
+
+A CronJob is counted as missed if it has failed to be created at its scheduled time. For example, if `concurrencyPolicy` is set to `Forbid` and a CronJob was attempted to be scheduled when there was a previous schedule still running, then it would count as missed.
+
+For example,"
+c07,A2,k8s-workloads-management,7806,Updating your application without an outage,k8s-workloads-management@7146-8146-2bd407f5,1000,"during a rollout, by setting a _surge maximum_ of
+100%:
+
+```shell
+kubectl patch --type='merge' -p '{""spec"":{""strategy"":{""rollingUpdate"":{""maxSurge"": ""100%"" }}}}'
+```
+
+```none
+deployment.apps/my-nginx patched
+```
+
+To update to version 1.16.1, change `.spec.template.spec.containers[0].image` from `nginx:1.14.2`
+to `nginx:1.16.1` using `kubectl edit`:
+
+```shell
+kubectl edit deployment/my-nginx
+# Change the manifest to use the newer container image, then save your changes
+```
+
+That's it! The Deployment will declaratively update the deployed nginx application progressively
+behind the scene. It ensures that only a certain number of old replicas may be down while they are
+being updated, and only a certain number of new replicas may be created above the desired number
+of pods. To learn more details about how this happens,
+visit Deployment.
+
+You can use rollouts with DaemonSets, Deployments, or StatefulSets.
+
+### Managing rollouts
+
+You can use `kubectl rollout` to manage a
+progressive update of"
+c08,A2,k8s-workloads-pods-downward-api,129,,k8s-workloads-pods-downward-api@0-999-cba33ec0,999,"It is sometimes useful for a container to have information about itself, without
+being overly coupled to Kubernetes. The _downward API_ allows containers to consume
+information about themselves or the cluster without using the Kubernetes client
+or API server.
+
+An example is an existing application that assumes a particular well-known
+environment variable holds a unique identifier. One possibility is to wrap the
+application, but that is tedious and error-prone, and it violates the goal of low
+coupling. A better option would be to use the Pod's name as an identifier, and
+inject the Pod's name into the well-known environment variable.
+
+In Kubernetes, there are two ways to expose Pod and container fields to a running container:
+
+* as environment variables
+* as files in a `downwardAPI` volume
+
+Together, these two ways of exposing Pod and container fields are called the
+_downward API_.
+
+## Available fields
+
+Only some Kubernetes API fields are available through the downward API. This
+section"
+c09,A2,k8s-workloads-pods-user-namespaces,7267,Set up a node to support user namespaces,k8s-workloads-pods-user-namespaces@6297-7297-0482f100,1000,"to the pod's user namespace and invalid outside
+of it.
+
+Without using a user namespace a container running as root, in the case of a
+container breakout, has root privileges on the node. And if some capability were
+granted to the container, the capabilities are valid on the host too. None of
+this is true when we use user namespaces.
+
+If you want to know more details about what changes when user namespaces are in
+use, see `man 7 user_namespaces`.
+
+## Set up a node to support user namespaces
+
+By default, the kubelet assigns pods UIDs/GIDs above the range 0-65535, based on
+the assumption that the host's files and processes use UIDs/GIDs within this
+range, which is standard for most Linux distributions. This approach prevents
+any overlap between the UIDs/GIDs of the host and those of the pods.
+
+Avoiding the overlap is important to mitigate the impact of vulnerabilities such
+as [CVE-2021-25741][CVE-2021-25741], where a pod can potentially read arbitrary
+files in the host. If the UIDs/GIDs of"
+c10,A2,k8s-workloads-workload-api-workloadbuilder,9280,The workloadbuilder library > Validating a scheduling configuration > Opting out of declarative validation,k8s-workloads-workload-api-workloadbuilder@8996-9996-2e167763,1000,"one option
+controls it:
+
+* **Out-of-tree controllers** leave declarative validation enabled, which is the default.
+  Nothing else applies those structural rules to a custom resource, so a single `Validate`
+  call covers both layers.
+* **In-tree controllers** set `DisableDeclarativeValidation`, because the API server already
+  runs declarative validation on the embedded blocks while validating the parent object.
+  Skipping the first layer avoids checking the same fields twice, leaving `Validate` to run
+  only the controller-policy checks.
+
+#### Opting in to scheduling options
+
+Because the building-block types are shared across controllers, future releases may add
+scheduling options that do not make sense for every controller. To keep new options from
+silently leaking in, `workloadbuilder` uses an allow-list model: a controller declares the
+policies and disruption modes it supports, and `Validate` rejects anything outside that set,
+reporting the error at the offending block's field path."

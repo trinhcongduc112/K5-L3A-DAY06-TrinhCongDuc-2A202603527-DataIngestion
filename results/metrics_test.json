@@ -1,0 +1,187 @@
+{
+  "evaluated_at": "2026-11-13T11:32:20+00:00",
+  "split": "test",
+  "benchmark_sha256": "a9f4240840547b71d7ecf3b77740c1b9ad35c5fa787d4bb91fbc199df61e5ff1",
+  "top_k": 3,
+  "embedding_model": "intfloat/multilingual-e5-small",
+  "embedding_revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+  "query_embedding_s": 0.48,
+  "median_search_ms": {
+    "A": 43.16,
+    "B": 47.17,
+    "C": 30.38,
+    "A2": 31.17
+  },
+  "metrics": {
+    "A": {
+      "test": {
+        "n": 8,
+        "hit_at_1_count": 2,
+        "hit_at_3_count": 4,
+        "hit_at_1": "2/8",
+        "hit_at_3": "4/8",
+        "hit_at_1_pct": 25.0,
+        "hit_at_3_pct": 50.0,
+        "mrr_at_3": 0.354,
+        "filter_questions": 2,
+        "filter_applied": 0,
+        "scope_compliant_top3": "2/2",
+        "hit_at_3_on_filter_questions": "1/2",
+        "hit_at_1_on_filter_questions": "0/2",
+        "by_type": {
+          "condition_exception": {
+            "n": 2,
+            "hit_at_1": "0/2",
+            "hit_at_3": "1/2"
+          },
+          "direct": {
+            "n": 2,
+            "hit_at_1": "1/2",
+            "hit_at_3": "1/2"
+          },
+          "metadata_scope": {
+            "n": 2,
+            "hit_at_1": "0/2",
+            "hit_at_3": "1/2"
+          },
+          "paraphrase": {
+            "n": 2,
+            "hit_at_1": "1/2",
+            "hit_at_3": "1/2"
+          }
+        },
+        "failure_modes": {
+          "evidence_split": 1,
+          "right_document_other_passage": 3
+        }
+      }
+    },
+    "A2": {
+      "test": {
+        "n": 8,
+        "hit_at_1_count": 2,
+        "hit_at_3_count": 6,
+        "hit_at_1": "2/8",
+        "hit_at_3": "6/8",
+        "hit_at_1_pct": 25.0,
+        "hit_at_3_pct": 75.0,
+        "mrr_at_3": 0.479,
+        "filter_questions": 2,
+        "filter_applied": 0,
+        "scope_compliant_top3": "2/2",
+        "hit_at_3_on_filter_questions": "1/2",
+        "hit_at_1_on_filter_questions": "1/2",
+        "by_type": {
+          "condition_exception": {
+            "n": 2,
+            "hit_at_1": "0/2",
+            "hit_at_3": "1/2"
+          },
+          "direct": {
+            "n": 2,
+            "hit_at_1": "1/2",
+            "hit_at_3": "2/2"
+          },
+          "metadata_scope": {
+            "n": 2,
+            "hit_at_1": "1/2",
+            "hit_at_3": "1/2"
+          },
+          "paraphrase": {
+            "n": 2,
+            "hit_at_1": "0/2",
+            "hit_at_3": "2/2"
+          }
+        },
+        "failure_modes": {
+          "evidence_split": 1,
+          "right_document_other_passage": 1
+        }
+      }
+    },
+    "B": {
+      "test": {
+        "n": 8,
+        "hit_at_1_count": 3,
+        "hit_at_3_count": 6,
+        "hit_at_1": "3/8",
+        "hit_at_3": "6/8",
+        "hit_at_1_pct": 37.5,
+        "hit_at_3_pct": 75.0,
+        "mrr_at_3": 0.542,
+        "filter_questions": 2,
+        "filter_applied": 0,
+        "scope_compliant_top3": "2/2",
+        "hit_at_3_on_filter_questions": "1/2",
+        "hit_at_1_on_filter_questions": "0/2",
+        "by_type": {
+          "condition_exception": {
+            "n": 2,
+            "hit_at_1": "1/2",
+            "hit_at_3": "1/2"
+          },
+          "direct": {
+            "n": 2,
+            "hit_at_1": "2/2",
+            "hit_at_3": "2/2"
+          },
+          "metadata_scope": {
+            "n": 2,
+            "hit_at_1": "0/2",
+            "hit_at_3": "1/2"
+          },
+          "paraphrase": {
+            "n": 2,
+            "hit_at_1": "0/2",
+            "hit_at_3": "2/2"
+          }
+        },
+        "failure_modes": {
+          "right_document_other_passage": 2
+        }
+      }
+    },
+    "C": {
+      "test": {
+        "n": 8,
+        "hit_at_1_count": 3,
+        "hit_at_3_count": 6,
+        "hit_at_1": "3/8",
+        "hit_at_3": "6/8",
+        "hit_at_1_pct": 37.5,
+        "hit_at_3_pct": 75.0,
+        "mrr_at_3": 0.542,
+        "filter_questions": 2,
+        "filter_applied": 2,
+        "scope_compliant_top3": "2/2",
+        "hit_at_3_on_filter_questions": "1/2",
+        "hit_at_1_on_filter_questions": "0/2",
+        "by_type": {
+          "condition_exception": {
+            "n": 2,
+            "hit_at_1": "1/2",
+            "hit_at_3": "1/2"
+          },
+          "direct": {
+            "n": 2,
+            "hit_at_1": "2/2",
+            "hit_at_3": "2/2"
+          },
+          "metadata_scope": {
+            "n": 2,
+            "hit_at_1": "0/2",
+            "hit_at_3": "1/2"
+          },
+          "paraphrase": {
+            "n": 2,
+            "hit_at_1": "0/2",
+            "hit_at_3": "2/2"
+          }
+        },
+        "failure_modes": {
+          "right_document_other_passage": 2
+        }
+      }
+    }
+  }
+}
